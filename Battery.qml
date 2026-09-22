@@ -15,8 +15,8 @@ Item {
         let pad = num => num.toString().padStart(2, '0');
         return `${pad(hours)}H ${pad(minutes)}M ${pad(seconds)}S`;
     }
-    width: childrenRect.width
-    height: childrenRect.height
+    implicitWidth: childrenRect.width
+    implicitHeight: childrenRect.height
     Rectangle {
         id: batWidget
         implicitWidth: childrenRect.width + 20.

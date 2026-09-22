@@ -9,8 +9,8 @@ Scope {
             left: true
             right: true
         }
-
         implicitHeight: 35
+        margins.top: 10
         Workspaces {
             anchors.left: parent.left
             anchors.leftMargin: 10

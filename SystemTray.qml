@@ -3,8 +3,12 @@ import QtQuick
 import QtQuick.Layouts
 
 Item {
+    anchors.right: parent.right
+    anchors.rightMargin: 10
+    anchors.verticalCenter: parent.verticalCenter
+    width: childrenRect.width
     Rectangle {
-        implicitWidth: childrenRect.width
+        implicitWidth: childrenRect.width + 10
         implicitHeight: 40
         color: Theme.bg
         anchors.right: parent.right
@@ -14,7 +18,10 @@ Item {
             Wifi {}
             Bluetooth {}
             Battery {}
-            Audio {}
+            Audio {
+                Layout.preferredHeight: childrenRect.height
+                Layout.preferredWidth: childrenRect.width
+            }
         }
     }
 }

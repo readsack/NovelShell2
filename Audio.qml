@@ -10,11 +10,10 @@ Item {
     PwObjectTracker {
         objects: [Pipewire.defaultAudioSink]
     }
-    width: childrenRect.width
-    height: childrenRect.height
+
     Rectangle {
         id: auWidget
-        implicitWidth: childrenRect.width + 20.
+        width: childrenRect.width + 20
         implicitHeight: 40
         color: Theme.bg
         anchors.centerIn: parent
