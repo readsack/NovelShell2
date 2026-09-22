@@ -16,24 +16,26 @@ Item {
 
             anchors.centerIn: parent
             Repeater {
-                model: Hyprland.workspaces.values.length > 5 ? Hyprland.workspaces.values.length : 5
+                model: Hyprland.workspaces.values.length >= 5 ? Hyprland.workspaces.values.length : 5
                 delegate: Rectangle {
-                    property var ws: Hyprland.workspaces.values.find(modelData)
-                    color: modelData.active ? Theme.accent : "#00000000"
+                    property var ws: Hyprland.workspaces.values.find((w, i) => w.id == modelData + 1)
+                    property var wsid: ws ? ws.id : modelData + 1
+                    color: Hyprland.focusedWorkspace.id == wsid ? Theme.accent : Theme.bg
                     width: 40
                     height: 27
                     MouseArea {
                         anchors.fill: parent
                         onClicked: {
-                            modelData.activate();
+                            Hyprland.dispatch("hl.dsp.focus({ workspace = '" + parent.wsid + "' })");
                         }
                     }
                     Text {
                         anchors.centerIn: parent
-                        color: modelData.active ? Theme.bgAlt : Theme.textMuted
-                        text: modelData.id
+                        color: Hyprland.focusedWorkspace.id == parent.wsid ? Theme.bgAlt : Theme.text
+                        text: parent.wsid
                         font.family: "SpaceMono Nerd Font"
                         font.bold: true
+                        font.pixelSize: 12
                     }
                 }
             }

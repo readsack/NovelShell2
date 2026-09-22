@@ -16,5 +16,15 @@ Scope {
             anchors.leftMargin: 10
             anchors.verticalCenter: parent.verticalCenter
         }
+
+        Clock {
+            anchors.centerIn: parent
+            anchors.verticalCenter: parent.verticalCenter
+        }
+        SystemTray {
+            anchors.right: parent.right
+            anchors.verticalCenter: parent.verticalCenter
+            anchors.rightMargin: 10
+        }
     }
 }
