@@ -23,7 +23,7 @@ Item {
             text: "󰥔  " + Qt.formatDateTime(clock.date, "ddd, dd MMM  hh:mm")
             color: Theme.text
             font.pixelSize: 14
-            font.family: "SpaceMono Nerd Font"
+            font.family: Theme.font
             font.bold: true
         }
         MouseArea {
@@ -58,14 +58,14 @@ Item {
                 Layout.fillWidth: true
                 font.pixelSize: 14
 
-                font.family: "SpaceMono Nerd Font"
+                font.family: Theme.font
                 delegate: Text {
                     color: Theme.text
                     text: model.shortName
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignVCenter
                     font {
-                        family: "SpaceMono Nerd Font"
+                        family: Theme.font
                         pixelSize: 14
                         bold: true
                     }
@@ -97,7 +97,7 @@ Item {
                         verticalAlignment: Text.AlignVCenter
                         // Dim days that belong to the previous/next month
                         color: model.month === monthGrid.month ? (parent.isToday ? Theme.accent : Theme.text) : Theme.textMuted
-                        font.family: "SpaceMono Nerd Font"
+                        font.family: Theme.font
                         font.pixelSize: 14
                     }
                 }

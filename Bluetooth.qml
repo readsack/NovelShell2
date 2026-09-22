@@ -21,7 +21,7 @@ Item {
 
             font {
                 pixelSize: 14
-                family: "SpaceMono Nerd Font"
+                family: Theme.font
             }
         }
         MouseArea {

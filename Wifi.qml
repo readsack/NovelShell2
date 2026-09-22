@@ -20,7 +20,7 @@ Rectangle {
         anchors.centerIn: parent
         font {
             pixelSize: 14
-            family: "SpaceMono Nerd Font"
+            family: Theme.font
         }
     }
     PanelWindow {

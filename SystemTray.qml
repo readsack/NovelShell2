@@ -13,6 +13,8 @@ Item {
             implicitHeight: 40
             Wifi {}
             Bluetooth {}
+            Battery {}
+            Audio {}
         }
     }
 }

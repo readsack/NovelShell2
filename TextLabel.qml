@@ -7,6 +7,6 @@ Text {
     text: name + (value != "" ? ": " : "") + value
     font {
         pixelSize: 14
-        family: "SpaceMono Nerd Font"
+        family: Theme.font
     }
 }

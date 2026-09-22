@@ -4,8 +4,24 @@ import QtQuick.Controls
 import QtQuick.Layouts
 
 Item {
+    id: wkspcWidget
     implicitHeight: 37
     width: childrenRect.width
+
+    function createWorkspaceList(minVal) {
+        let lst = [];
+        let maxW = 1;
+        for (let i = 0; i < Hyprland.workspaces.values.length; i++)
+            lst.push(Hyprland.workspaces.values[i].id);
+        lst.sort();
+        for (let i = 1; i <= minVal; i++) {
+            if (lst[i - 1] != i)
+                lst.push(i);
+        }
+        lst.sort();
+        return lst;
+    }
+
     Rectangle {
         width: childrenRect.width + 10
         height: childrenRect.height + 10
@@ -16,10 +32,10 @@ Item {
 
             anchors.centerIn: parent
             Repeater {
-                model: Hyprland.workspaces.values.length >= 5 ? Hyprland.workspaces.values.length : 5
+                model: wkspcWidget.createWorkspaceList(5)
                 delegate: Rectangle {
-                    property var ws: Hyprland.workspaces.values.find((w, i) => w.id == modelData + 1)
-                    property var wsid: ws ? ws.id : modelData + 1
+                    property var ws: Hyprland.workspaces.values.find((w, i) => w.id == modelData)
+                    property var wsid: ws ? ws.id : index + 1
                     color: Hyprland.focusedWorkspace.id == wsid ? Theme.accent : Theme.bg
                     width: 40
                     height: 27
@@ -31,9 +47,9 @@ Item {
                     }
                     Text {
                         anchors.centerIn: parent
-                        color: Hyprland.focusedWorkspace.id == parent.wsid ? Theme.bgAlt : Theme.text
+                        color: Hyprland.focusedWorkspace.id == parent.wsid ? Theme.bgAlt : parent.ws ? Theme.text : Theme.textMuted
                         text: parent.wsid
-                        font.family: "SpaceMono Nerd Font"
+                        font.family: Theme.font
                         font.bold: true
                         font.pixelSize: 12
                     }

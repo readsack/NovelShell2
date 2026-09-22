@@ -14,4 +14,5 @@ Singleton {
     property color border: "#30333b"
 
     property color white: "#eceef2"
+    property string font: "SpaceMono Nerd Font"
 }
