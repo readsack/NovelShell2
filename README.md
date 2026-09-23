@@ -1,7 +1,7 @@
 # NovelShell 2.0
 A simple, clean, minimal shell for Hyprland + Arch Linux, that just works.
 
-### Quick Start:
+### Quick Start(Only for Arch + Hyprland):
 1. Clone the github repo
 2. ```cd``` into the directory
 3. Run the ```install.sh``` file
@@ -17,3 +17,9 @@ Here are the features under the shell:
 5. Battery Status + Battery Configuration 
 6. Volume Display + Media Player Configuration 
 7. System Tray Dropdown
+
+### Stack
+This project was built using Quickshell entirely. Quickshell is a very nice framework which uses Qt's QML language for scripting and integrates it with system apis like NetworkManager, UPower, bluetoothd, Mpris, Pipewire etc.
+
+### Credits
+Thanks to @outfoxxed - Creator of Quickshell
