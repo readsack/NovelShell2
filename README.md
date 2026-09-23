@@ -1,6 +1,11 @@
 # NovelShell 2.0
 A simple, clean, minimal shell for Hyprland + Arch Linux, that just works.
 
+### Demo
+https://github.com/user-attachments/assets/d6f8354b-5297-4899-a939-cda5b90fa8a8
+
+
+
 ### Quick Start(Only for Arch + Hyprland):
 1. Clone the github repo
 2. ```cd``` into the directory
