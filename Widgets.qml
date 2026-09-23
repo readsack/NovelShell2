@@ -1,4 +1,5 @@
 import Quickshell
+import Quickshell.Wayland
 import QtQuick
 import QtQuick.Layouts
 
@@ -7,6 +8,11 @@ Item {
     anchors.rightMargin: 10
     anchors.verticalCenter: parent.verticalCenter
     width: childrenRect.width
+    property var root
+    IdleInhibitor {
+        window: root
+    }
+
     Rectangle {
         implicitWidth: childrenRect.width + 10
         implicitHeight: 40
@@ -22,6 +28,7 @@ Item {
                 Layout.preferredHeight: childrenRect.height
                 Layout.preferredWidth: childrenRect.width
             }
+            SysTray {}
         }
     }
 }

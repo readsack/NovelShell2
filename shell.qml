@@ -1,4 +1,7 @@
+//@ pragma UseQApplication
+
 import Quickshell // for PanelWindow
+
 import QtQuick // for Text
 
 Scope {
@@ -21,7 +24,7 @@ Scope {
             anchors.centerIn: parent
             anchors.verticalCenter: parent.verticalCenter
         }
-        SystemTray {
+        Widgets {
             anchors.right: parent.right
             anchors.verticalCenter: parent.verticalCenter
             anchors.rightMargin: 10

@@ -16,7 +16,6 @@ Item {
         lst.sort();
         for (let i = 1; i <= minVal; i++) {
             if (lst[i - 1] != i) {
-                console.log(i);
                 lst.push(i);
                 lst.sort();
             }
