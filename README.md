@@ -22,10 +22,3 @@ Here are the features under the shell:
 5. Battery Status + Battery Configuration 
 6. Volume Display + Media Player Configuration 
 7. System Tray Dropdown
-
-### Stack
-This project was built using Quickshell entirely. 
-Quickshell is a framework which uses Qt's QML language for scripting and integrates it with system apis like NetworkManager, UPower, bluetoothd, Mpris, Pipewire etc.
-
-### Credits
-Thanks to @outfoxxed - Creator of Quickshell
